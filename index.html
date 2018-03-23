@@ -24,10 +24,12 @@ function htmlCarta( fila, col ){
 
 function repartir(){
 	var cartas="";
-	for( var fila = 0; fila <= 4; fila++){
-		for( col = 0; col <= 5; col++){
+	for( var fila = 0; fila < 4; fila++){
+		cartas += "<div id=soyLaFila"+fila+">";
+		for( col = 0; col < 5; col++){
 			cartas += htmlCarta( fila, col );
 		}
+		cartas += "</div>";
 	}
 	
 	tab = document.getElementById("tablero");
@@ -41,12 +43,14 @@ function repartir(){
 	visibility: hidden;
 }	
 
-#tablero div
+#tablero div div
 {
 	background-color: indigo;
 	padding: 4px;
 	border-width: 5px;
+	border-color:white;
 	margin: 8px;
+	display: inline-block;
 }
 	</style>
 	</head>
